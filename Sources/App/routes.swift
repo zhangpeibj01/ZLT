@@ -1,5 +1,9 @@
 import Vapor
 import OpenAIKit
+import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 func routes(_ app: Application) throws {
     app.get { req async in
