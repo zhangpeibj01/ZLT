@@ -19,7 +19,7 @@ public class OpenAIClient {
             try? httpClient.syncShutdown()
         }
 
-        let configuration = Configuration(apiKey: "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")
+        let configuration = Configuration(apiKey: "")
         let openAIClient = OpenAIKit.Client(httpClient: httpClient, configuration: configuration)
         let image = try await openAIClient.images.create(prompt: prompt, n: count, size: AIImageSize(rawValue: size)?.size ?? .tenTwentyFour)
         return .init(data: image.data.map { .init(url: $0.url) })
